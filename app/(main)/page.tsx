@@ -17,9 +17,9 @@ export default function Home() {
       <Banner />
       <CV />
       <Fitur />
-      <Announcement />
       <ArtikelTerkait />
       <Experience />
+      <Announcement />
       <Analysis />
     </main>
   );

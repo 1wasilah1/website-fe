@@ -38,7 +38,7 @@ export default function GoldAnalysis() {
   }, []);
 
   return (
-    <section className="px-6 py-10 bg-white">
+    <section className="px-6 py-10 bg-gray-100">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 items-center">
         <div>
           <h2 className="text-2xl font-bold">{videoTitle || "Memuat judul video..."}</h2>

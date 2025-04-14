@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
-import { FaInstagram, FaTwitter, FaFacebook, FaShareAlt } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaShareAlt } from "react-icons/fa";
+import { FaXTwitter, FaYoutube } from "react-icons/fa6";
 
 const FloatingMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,28 +24,36 @@ const FloatingMenu = () => {
         }`}
       >
         <a
-          href="https://www.instagram.com/"
+          href="https://www.instagram.com/dinasperumahan.jakarta"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 hover:bg-blue-600 px-3 py-2 rounded w-full"
         >
-          <FaInstagram size={18} /> Instagram
+          <FaInstagram size={18} />
         </a>
         <a
-          href="https://twitter.com/"
+          href="https://x.com/perumahandki"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 hover:bg-blue-600 px-3 py-2 rounded w-full"
         >
-          <FaTwitter size={18} /> Twitter
+          <FaXTwitter size={18} />
         </a>
         <a
-          href="https://www.facebook.com/"
+          href="https://web.facebook.com/dinasperumahan.dki/"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 hover:bg-blue-600 px-3 py-2 rounded w-full"
         >
-          <FaFacebook size={18} /> Facebook
+          <FaFacebook size={18} />
+        </a>
+        <a
+          href="https://www.youtube.com/@dinasperumahan.jakarta"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 hover:bg-blue-600 px-3 py-2 rounded w-full"
+        >
+          <FaYoutube size={18} />
         </a>
       </div>
     </div>

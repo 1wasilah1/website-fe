@@ -1,8 +1,8 @@
 const Footer = () => {
   return (
-    <footer className="bg-teal-700 text-white py-10 font-poppins">
+    <footer className="bg-gradient-to-r from-[#BDD918] via-[#376F04] to-[#1E5B00] text-white py-10 font-poppins">
       <div className="container mx-auto px-6 lg:px-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Informasi Perusahaan */}
           <div>
             <h2 className="text-lg font-semibold">Alamat Utama</h2>

@@ -4,6 +4,9 @@ const nextConfig = {
     experimental: {
       appDir: true, // pastikan ini true untuk App Router
     },
+    images: {
+      domains: ['dprkp.jakarta.go.id'],
+    },
   };
 
 module.exports = nextConfig

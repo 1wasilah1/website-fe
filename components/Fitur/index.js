@@ -1,132 +1,183 @@
 "use client";
-import { FaShieldAlt, FaMapMarkerAlt, FaCalculator, FaLaptop } from "react-icons/fa";
+import Image from "next/image";
+
+import { FaCalculator, FaHome, FaLaptop } from "react-icons/fa";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import logoDprkp from "../../public/images/logo-dprkp-back-putih.png";
+import logoMitrum from "../../public/images/logo/mitrum.png";
+import logoPsu from "../../public/images/logo/psu.png";
+import logoSidakon from "../../public/images/logo/sidakon-small.png";
+import logoSirukim from "../../public/images/logo/sirukim.png";
+
 const features = [
   {
-    icon: <FaShieldAlt className="text-xl text-black" />, 
+    icon: <FaHome className="text-xl text-black" />,
     title: "Hunian Terjangkau Milik",
     description: "Hunian Terjangkau Milik",
     linkText: "Selengkapnya",
     linkHref: "#",
-    bgColor: "bg-gray-400"
+    bgColor: "bg-gray-100",
   },
   {
-    icon: <FaMapMarkerAlt className="text-xl text-black" />, 
+    icon: <Image src={logoSirukim} alt="Logo Sirukim" width={50} height={50} />,
     title: "SIRUKIM",
     description: "SIRUKIM",
     linkText: "Selengkapnya",
     linkHref: "#",
-    bgColor: "bg-gray-400"
+    bgColor: "bg-gray-100",
   },
   {
-    icon: <FaCalculator className="text-xl text-black" />, 
+    icon: <Image src={logoSidakon} alt="Logo Sirukim" width={50} height={50} />,
     title: "SIDAKON",
     description: "SIDAKON",
     linkText: "Selengkapnya",
     linkHref: "#",
-    bgColor: "bg-gray-400"
+    bgColor: "bg-gray-100",
   },
   {
-    icon: <FaLaptop className="text-xl text-black" />, 
+    icon: <FaHome className="text-xl text-black" />,
     title: "Aplikasi Booking Rusunawa",
     description: "Aplikasi Booking Rusunawa.",
     linkText: "Selengkapnya",
     linkHref: "#",
-    bgColor: "bg-gray-400"
+    bgColor: "bg-gray-100",
   },
   {
-    icon: <FaMapMarkerAlt className="text-xl text-black" />, 
-    title: "PERBAIKAN RUMAH",
+    icon: (
+      <Image
+        src={logoDprkp}
+        alt="Logo Perbaikan Rumah"
+        width={50}
+        height={50}
+      />
+    ),
+    title: "Perbaikan Rumah",
     description: "PERBAIKAN RUMAH",
     linkText: "Selengkapnya",
-    linkHref: "#",
-    bgColor: "bg-gray-400"
+    linkHref: "https://dprkp.jakarta.go.id/perbaikanrumah/",
+    bgColor: "bg-gray-100",
   },
   {
-    icon: <FaCalculator className="text-xl text-black" />, 
+    icon: <FaCalculator className="text-xl text-black" />,
     title: "SIMONTER-CAPCIP",
     description: "SIMONTER-CAPCIP",
     linkText: "Selengkapnya",
-    linkHref: "#",
-    bgColor: "bg-gray-400"
+    linkHref: "https://simonter-capcip.com/",
+    bgColor: "bg-gray-100",
   },
   {
-    icon: <FaLaptop className="text-xl text-black" />, 
+    icon: <FaLaptop className="text-xl text-black" />,
     title: "KMPRO",
     description: "KMPRO",
     linkText: "Selengkapnya",
     linkHref: "#",
-    bgColor: "bg-gray-400"
+    bgColor: "bg-gray-100",
   },
   {
-    icon: <FaMapMarkerAlt className="text-xl text-black" />, 
-    title: "PENINGKATAN",
-    description: "PENINGKATAN KUALITAS PERUMAHAN KUMUH",
+    icon: <FaHome className="text-xl text-black" />,
+    title: "Peningkatan Kualitas Perumahan Kumuh",
+    description: "",
     linkText: "Selengkapnya",
-    linkHref: "#",
-    bgColor: "bg-gray-400"
+    linkHref: "https://dprkp.jakarta.go.id/penataan_kumuh/",
+    bgColor: "bg-gray-100",
   },
   {
-    icon: <FaCalculator className="text-xl text-black" />, 
+    icon: <Image src={logoPsu} alt="Logo Psu" width={50} height={50} />,
     title: "Digitalisasi",
     description: "Digitalisasi Infrastuktur RW Kumuh Jakarta Barat",
     linkText: "Selengkapnya",
-    linkHref: "#",
-    bgColor: "bg-gray-400"
+    linkHref: "https://jakartasatu.jakarta.go.id/portal/apps/experiencebuilder/experience/?id=b2c080f0860f40e1859e642cbf2e6c48",
+    bgColor: "bg-gray-100",
   },
   {
-    icon: <FaLaptop className="text-xl text-black" />, 
+    icon: <Image src={logoMitrum} alt="Logo Mitrum" width={50} height={50} />,
     title: "Mitra Perumahan",
     description: "Mitra Perumahan",
     linkText: "Selengkapnya",
-    linkHref: "#",
-    bgColor: "bg-gray-400"
-  }
+    linkHref: "https://mitrum.dprkp.id/",
+    bgColor: "bg-gray-100",
+  },
 ];
 
 export default function ThumbnailGrid() {
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    height: "220px",
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1
-        }
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true,
+        },
       },
       {
         breakpoint: 768,
         settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
-    <div className="max-w-6xl mx-auto py-12">
-      <h2 className="text-center text-lg font-semibold mb-6 text-black">
-      Program Unggulan
-      </h2>
-      <Slider {...settings}>
-        {features.map((feature, index) => (
-          <div key={index} className="p-6 border rounded-lg shadow-md flex flex-col items-start mx-2">
-            <div className={`p-2 rounded-full ${feature.bgColor} w-12 h-12 flex items-center justify-center`}>{feature.icon}</div>
-            <h3 className="mt-4 text-lg font-bold text-black">{feature.title}</h3>
-            <p className="text-sm text-black mt-2">{feature.description}</p>
-            <a href={feature.linkHref} className="mt-3 text-black font-semibold">{feature.linkText}</a>
-          </div>
-        ))}
-      </Slider>
-    </div>
+    <section className="py-10 bg-gray-100">
+      <div className="max-w-6xl mx-auto pb-12">
+        <h2 className="text-center text-2xl font-semibold mb-6 text-black">
+          Program Unggulan
+        </h2>
+        <div className="px-4">
+          <Slider {...settings}>
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="p-6 border rounded-lg shadow-md flex flex-col items-start mx-2 md:h-52"
+              >
+                <div
+                  className={`p-2 rounded-full ${feature.bgColor} w-12 h-12 flex items-center justify-center`}
+                >
+                  {feature.icon}
+                </div>
+                <h3 className="mt-4 text-md font-bold text-black">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-black mt-2">{feature.description}</p>
+                <a
+                  href={feature.linkHref}
+                  className="mt-3 text-[#376F04] font-semibold text-sm"
+                >
+                  {feature.linkText}
+                </a>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </div>
+    </section>
   );
 }
