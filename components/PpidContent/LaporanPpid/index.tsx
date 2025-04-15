@@ -1,8 +1,7 @@
 "use client";
-import React from "react";
-import { FaRegFilePdf } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
 
-const ppidItem = [
+let ppidItem = [
   {
     id: 1,
     title: "SOP PPID DPRKP",
@@ -80,21 +79,51 @@ const ppidItem = [
     id: 10,
     title: "Formulir Keberatan",
     link: "https://dprkp.jakarta.go.id/uploaded/webcontent/W0iJ0FIYoM2E65CHcf2P6OswdXHnhsAL.pdf",
-    year: 2023,
+    year: null,
     description: "Formulir Keberatan Informasi PPID",
   },
   {
     id: 11,
     title: "Formulir Permohonan Informasi",
     link: "https://dprkp.jakarta.go.id/uploaded/webcontent/6SVUKvoFUstFvqVQtciOV4H9PPePhnHj.pdf",
-    year: 2023,
+    year: null,
     description: "Formulir Permohonan Informasi PPID",
   },
 ];
 
 export default function LaporanPpid() {
+  const [value, setValue] = useState("");
+  const [dataLaporan, setDataLaporan] = useState([]);
+  const [type, setType] = useState("title");
+
+  useEffect(() => {
+    setDataLaporan(ppidItem);
+  }, []);
+
   const downloadLaporan = (url) => {
     window.open(url, "_blank");
+  };
+
+  const filterSearchBy = (typeFilter) => {
+    setType(typeFilter);
+  };
+
+  const searchValue = (event, keyword) => {
+    if (keyword !== "") {
+      let search;
+      if (type === "year") {
+        search = dataLaporan.filter((data) =>
+          data[type].includes(Number(keyword))
+        );
+      } else {
+        search = dataLaporan.filter((data) =>
+          data[type].toLowerCase().includes(keyword)
+        );
+      }
+      setDataLaporan(search);
+    } else {
+      setDataLaporan(ppidItem);
+    }
   };
 
   return (
@@ -103,26 +132,75 @@ export default function LaporanPpid() {
         <h2 className="text-center text-2xl font-semibold mb-6 text-green-700">
           Laporan PPID
         </h2>
-        <div className="overflow-auto grid md:grid-cols-3 sm:grid-cols-1 gap-4">
-          {ppidItem.map((feature, index) => (
-            <div
-              key={index}
-              className="cursor-pointer bg-white p-4 m-2 h-full flex"
-              onClick={() => downloadLaporan(feature.link)}
-            >
-              <div
-                className={`p-2 rounded-full w-12 h-12 flex items-center justify-center`}
-              >
-                <FaRegFilePdf className="text-xl text-black" />
-              </div>
-              <div>
-                <h3 className="mt-2 text-md font-bold text-black">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-black mt-2">{feature.description}</p>
-              </div>
-            </div>
-          ))}
+        <div className="flex mx-2">
+          <select
+            id="searchFilter"
+            name="searchFilter"
+            className="select bg-white my-2 mr-1 rounded-sm text-md text-gray-600 overflow-hidden"
+            onChange={(e) => filterSearchBy(e.target.value)}
+          >
+            <option value={"title"}>Nama Laporan</option>
+            <option value={"year"}>Tahun</option>
+          </select>
+          <div className="border-s-green-700 my-2">
+            <input
+              className="input sm:w-64 w-36 bg-white rounded-sm"
+              placeholder="Cari laporan"
+              type="text"
+              onChange={(e) => {
+                setValue(e.currentTarget.value);
+              }}
+              onKeyUp={(event) => {
+                searchValue(event, value);
+              }}
+            />
+          </div>
+        </div>
+
+        <div className="overflow-x-auto space-y-4 w-full mx-2">
+          <table className="table table-compact min-w-max overflow-x-scroll w-full">
+            <thead className="rounded-md bg-[#1E5B00] text-white">
+              <tr className="h-[44px]">
+                <th className="w-auto p-2">No</th>
+                <th className="w-auto">Nama Laporan</th>
+                <th className="w-auto p-2">Tahun</th>
+                <th className="w-auto p-2">Download</th>
+              </tr>
+            </thead>
+            <tbody className="overflow-y-auto bg-white">
+              {dataLaporan && dataLaporan.length > 0 ? (
+                <>
+                  {dataLaporan.map((row, index) => (
+                    <tr className="h-[44px]" key={index}>
+                      <td className="text-sm text-center z-10 bg-white font-sans">
+                        {index + 1}
+                      </td>
+                      <td className="text-sm text-left font-sans">
+                        {row.title ?? ""}
+                      </td>
+                      <td className="text-sm text-center font-sans">
+                        {row.year ?? "-"}
+                      </td>
+                      <td className="w-10 right-0 z-5 text-white text-xs font-sans text-center">
+                        <button
+                          className="bg-[#4e8234] p-2 rounded-sm"
+                          onClick={() => downloadLaporan(row.link)}
+                        >
+                          Lihat Data
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </>
+              ) : (
+                <tr className="h-[44px]">
+                  <td className="w-auto text-center text-black">
+                    Data Tidak Ditemukan
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
