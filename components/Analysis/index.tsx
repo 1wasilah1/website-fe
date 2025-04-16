@@ -56,8 +56,8 @@ export default function GoldAnalysis() {
         
         <div className="relative w-full h-64 md:h-80">
           <iframe 
-            width="560" 
-            height="315" 
+            width="100%" 
+            height="100%" 
             src={`https://www.youtube.com/embed/${VIDEO_ID}`} 
             title={videoTitle} 
             frameBorder="0" 
