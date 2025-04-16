@@ -10,19 +10,19 @@ const Sidebar = () => {
 
       <div className="space-y-2 flex flex-col">
         <SidebarItem icon={<Home size={20} />} label="Home" active />
-        <SidebarItem icon={<Compass size={20} />} label="Explore" />
+        {/* <SidebarItem icon={<Compass size={20} />} label="Explore" />
         <SidebarItem icon={<Video size={20} />} label="Shorts" />
-        <SidebarItem icon={<PlaySquare size={20} />} label="Subscriptions" />
+        <SidebarItem icon={<PlaySquare size={20} />} label="Subscriptions" /> */}
       </div>
 
       <hr className="my-4 border-gray-700" />
 
       <div className="text-sm text-gray-400 mb-2">Library</div>
       <div className="space-y-2 flex flex-col">
-        <SidebarItem icon={<Clock size={20} />} label="History" />
+        {/* <SidebarItem icon={<Clock size={20} />} label="History" />
         <SidebarItem icon={<Clock size={20} />} label="Watch Later" />
         <SidebarItem icon={<List size={20} />} label="Playlists" />
-        <SidebarItem icon={<Heart size={20} />} label="Liked Videos" />
+        <SidebarItem icon={<Heart size={20} />} label="Liked Videos" /> */}
       </div>
 
       <div className="mt-auto pt-4 border-t border-gray-700 flex items-center gap-2">

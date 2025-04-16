@@ -1,11 +1,19 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image";
+
+import announcement1 from "../../public/images/announcement/announcement1a.png";
+import announcement2 from "../../public/images/announcement/announcement2a.png";
+import announcement3 from "../../public/images/announcement/announcement3a.png";
+import announcement4 from "../../public/images/announcement/announcement4a.png";
+import announcement5 from "../../public/images/announcement/announcement5a.png";
+import announcement6 from "../../public/images/announcement/announcement6a.png";
 
 type Announcement = {
   title: string;
   link: string;
   pubDate: string;
-  image: string;
+  image: any;
 };
 
 export default function Announcements() {
@@ -17,42 +25,45 @@ export default function Announcements() {
       title: "Lowongan Pekerjaan Senior Assistant Profesional",
       link: "https://dprkp.jakarta.go.id/uploaded/repoimage/62defa8643d3c279c3bf382062c1e50190f79653.png",
       pubDate: "2025-03-25",
-      image: "https://dprkp.jakarta.go.id/uploaded/repoimage/62defa8643d3c279c3bf382062c1e50190f79653.png",
+      image: announcement1,
     },
     {
       id: 2,
       title: "Laporan Progres Verifikasi",
       link: "https://dprkp.jakarta.go.id/uploaded/repoimage/ae768c4286064d2cf766396a0fb74a4872de7d1e.png",
       pubDate: "2025-03-25",
-      image: "https://dprkp.jakarta.go.id/uploaded/repoimage/ae768c4286064d2cf766396a0fb74a4872de7d1e.png",
+      image: announcement2,
     },
     {
       id: 3,
       title: "Fasilitas Pembiayaan untuk Menara Kanaya Cilangkap",
       link: "https://dprkp.jakarta.go.id/uploaded/repoimage/231f1cb7d12dc9f671ffad0b78c9e40f5c810b9d.png",
       pubDate: "2024-02-28",
-      image: "https://dprkp.jakarta.go.id/uploaded/repoimage/231f1cb7d12dc9f671ffad0b78c9e40f5c810b9d.png",
+      image: announcement3,
     },
     {
       id: 4,
-      title: "https://dprkp.jakarta.go.id/uploaded/repoimage/5e389e72ce800f4750eae86b170de42b0e397c29.png",
+      title:
+        "Peletakan Batu Pertama Menara Ayasa Nuansa Cilangkap, Warga DKI Jakarta Dapat Daftar Via Aplikasi SIRUKIM",
       link: "https://dprkp.jakarta.go.id/uploaded/webcontent/r56y5rBI2dDfDEiMAS8BHC1wqEYpXtx9.png",
       pubDate: "2023-06-09",
-      image: "https://dprkp.jakarta.go.id/uploaded/repoimage/5e389e72ce800f4750eae86b170de42b0e397c29.png",
+      image: announcement4,
     },
     {
       id: 5,
-      title: "Penandatanganan Nota Kesepahaman (MoU), DPRKP dengan Universitas Gunadarma Terkait Pengembangan Perumahan dan Wilayah Perkotaan",
+      title:
+        "Penandatanganan Nota Kesepahaman (MoU), DPRKP dengan Universitas Gunadarma Terkait Pengembangan Perumahan dan Wilayah Perkotaan",
       link: "https://dprkp.jakarta.go.id/uploaded/repoimage/e1403d4fb21954b30829dab58e1ff6ac021364dc.png",
       pubDate: "2023-01-11",
-      image: "https://dprkp.jakarta.go.id/uploaded/repoimage/e1403d4fb21954b30829dab58e1ff6ac021364dc.png",
+      image: announcement5,
     },
     {
       id: 6,
-      title: "Peresmian Rumah Susun Asrama Polri Menteng Polres Metro Jakarta Pusat",
+      title:
+        "Peresmian Rumah Susun Asrama Polri Menteng Polres Metro Jakarta Pusat",
       link: "https://dprkp.jakarta.go.id/uploaded/repoimage/5e2404edcaaaf5e7063be0b26910c9e7f6e3590e.png",
       pubDate: "2022-10-06",
-      image: "https://dprkp.jakarta.go.id/uploaded/repoimage/5e2404edcaaaf5e7063be0b26910c9e7f6e3590e.png",
+      image: announcement6,
     },
   ];
 
@@ -79,14 +90,18 @@ export default function Announcements() {
               rel="noopener noreferrer"
               className="flex-none w-64 bg-gray-100 p-4 rounded-lg shadow-md hover:bg-gray-200 transition"
             >
-              <img
+              <Image
+                className="w-full h-40 object-cover rounded-md"
                 src={news.image}
                 alt={news.title}
-                className="w-full h-40 object-cover rounded-md"
+                width={0}
+                height={0}
               />
               <h3 className="mt-2 text-md font-semibold">{news.title}</h3>
               <p className="text-gray-500 text-sm">
-                {new Date(news.pubDate).toLocaleString("id-ID", { dateStyle: 'long' })}
+                {new Date(news.pubDate).toLocaleString("id-ID", {
+                  dateStyle: "long",
+                })}
               </p>
             </a>
           ))}

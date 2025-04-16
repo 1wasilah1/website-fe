@@ -94,7 +94,6 @@ let ppidItem = [
 export default function LaporanPpid() {
   const [value, setValue] = useState("");
   const [dataLaporan, setDataLaporan] = useState([]);
-  const [type, setType] = useState("title");
 
   useEffect(() => {
     setDataLaporan(ppidItem);
@@ -104,22 +103,12 @@ export default function LaporanPpid() {
     window.open(url, "_blank");
   };
 
-  const filterSearchBy = (typeFilter) => {
-    setType(typeFilter);
-  };
-
-  const searchValue = (event, keyword) => {
+  const searchValue = (keyword) => {
     if (keyword !== "") {
       let search;
-      if (type === "year") {
-        search = dataLaporan.filter((data) =>
-          data[type].includes(Number(keyword))
-        );
-      } else {
-        search = dataLaporan.filter((data) =>
-          data[type].toLowerCase().includes(keyword)
-        );
-      }
+      search = dataLaporan.filter((data) =>
+        data["title"].toLowerCase().includes(keyword)
+      );
       setDataLaporan(search);
     } else {
       setDataLaporan(ppidItem);
@@ -132,16 +121,7 @@ export default function LaporanPpid() {
         <h2 className="text-center text-2xl font-semibold mb-6 text-green-700">
           Laporan PPID
         </h2>
-        <div className="flex mx-2">
-          <select
-            id="searchFilter"
-            name="searchFilter"
-            className="select bg-white my-2 mr-1 rounded-sm text-md text-gray-600 overflow-hidden"
-            onChange={(e) => filterSearchBy(e.target.value)}
-          >
-            <option value={"title"}>Nama Laporan</option>
-            <option value={"year"}>Tahun</option>
-          </select>
+        <div className="mx-2">
           <div className="border-s-green-700 my-2">
             <input
               className="input sm:w-64 w-36 bg-white rounded-sm"
@@ -150,8 +130,8 @@ export default function LaporanPpid() {
               onChange={(e) => {
                 setValue(e.currentTarget.value);
               }}
-              onKeyUp={(event) => {
-                searchValue(event, value);
+              onKeyUp={() => {
+                searchValue(value);
               }}
             />
           </div>
@@ -161,7 +141,7 @@ export default function LaporanPpid() {
           <table className="table table-compact min-w-max overflow-x-scroll w-full">
             <thead className="rounded-md bg-[#1E5B00] text-white">
               <tr className="h-[44px]">
-                <th className="w-auto p-2">No</th>
+                <th className="w-14 p-2">No</th>
                 <th className="w-auto">Nama Laporan</th>
                 <th className="w-auto p-2">Tahun</th>
                 <th className="w-auto p-2">Download</th>

@@ -1,26 +1,29 @@
 "use client";
-import React from "react";
 import Image from "next/image";
+import React from "react";
+import mediagaleri1 from "../../../public/images/mediagaleri/mediagaleri1.png";
+import mediagaleri2 from "../../../public/images/mediagaleri/mediagaleri2.png";
+import mediagaleri3 from "../../../public/images/mediagaleri/mediagaleri3.png";
 
 const mediaItem = [
   {
     id: 1,
     title: "Mekanisme Pelayanan Informasi Publik",
-    link: "https://dprkp.jakarta.go.id/uploaded/webcontent/y2vH9cmOe9hoLiBvQoRUt71l1syFdl8W.png",
+    link: mediagaleri1,
     description:
       "Seluruh informasi publik yang berada di lingkungan Pemerintah Daerah selain informasi yang dikecualikan dapat diakses oleh publik melalui prosedur permohonan informasi publik.",
   },
   {
     id: 2,
     title: "Mekanisme Pengajuan Keberatan",
-    link: "https://dprkp.jakarta.go.id/uploaded/webcontent/r56y5rBI2dDfDEiMAS8BHC1wqEYpXtx9.png",
+    link: mediagaleri2,
     description:
       "Pemohon informasi publik berhak mengajukan keberatan dengan alasan sebagai berikut : a. terdapat penolakan atas permohonan informasi publik; b. tidak disediakannya informasi berkala; c. tidak ditanggapinya permohonan informasi publik; d. permohonan informasi publik ditanggapi tidak sesuai dengan yang diminta; e. tidak dipenuhinya permohonan informasi publik; f. pengenaan biaya yang tidak wajar; dan/ atau g. penyampaian informasi publik melebihi waktu 10 (sepuluh) hari kerja sejak permohonan diterima apabila PPID telah menguasai atau mendokumentasikan informasi publik yang dimohon.",
   },
   {
     id: 3,
     title: "Mekanisme Permohonan Penyelesaian Sengketa Informasi",
-    link: "https://dprkp.jakarta.go.id/uploaded/webcontent/UeJCC6agqSYYyBqLjYoz6pjYzn6MbPLv.png",
+    link: mediagaleri3,
     description:
       "Penyelesaian Sengketa Informasi Publik melalui Komisi Informasi dapat ditempuh apabila: a. Pemohon tidak puas terhadap tanggapan atas keberatan yang diberikan oleh atasan PPID; atau b. Pemohon tidak mendapatkan tanggapan atas keberatan yang telah diajukan kepada atasan PPID dalam jangka waktu 30 (tiga puluh) hari kerja sejak keberatan diterima oleh atasan PPID.",
   },
