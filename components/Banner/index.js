@@ -6,21 +6,31 @@ import "slick-carousel/slick/slick-theme.css";
 import { motion } from "framer-motion";
 
 const banners = [
+  // {
+  //   image: "/images/banner/promo1.jpg",
+  //   title: "Dinas Perumahan Rakyat dan Kawasan Permukiman Provinsi DKI Jakarta.",
+  //   description: "Mewujudkan Perumahan Rakyat dan Kawasan Permukiman Provinsi DKI Jakarta yang layak huni, terjangkau, aman, terpadu, dan berkelanjutan."
+  // },
+  // {
+  //   image: "/images/banner/promo2.jpg",
+  //   title: "Cari Rusunawa",
+  //   description: "Jangan ragu untuk mengirimi kami pesan. Kami akan dengan senang hati membantu Anda."
+  // },
+  // {
+  //   image: "/images/banner/promo3.jpeg",
+  //   title: "Aplikasi Booking Rusunawa",
+  //   description: "Mewujudkan Perumahan Rakyat dan Kawasan Permukiman Provinsi DKI Jakarta yang layak huni, terjangkau, aman, terpadu, dan berkelanjutan."
+  // },
   {
-    image: "/images/promo1.jpg",
-    title: "Dinas Perumahan Rakyat dan Kawasan Permukiman Provinsi DKI Jakarta.",
-    description: "Mewujudkan Perumahan Rakyat dan Kawasan Permukiman Provinsi DKI Jakarta yang layak huni, terjangkau, aman, terpadu, dan berkelanjutan."
+    image: "/images/banner/rusun-jagakarsa.jpg",
+    title: "",
+    description: ""
   },
   {
-    image: "/images/promo2.jpg",
-    title: "Cari Rusunawa",
-    description: "Jangan ragu untuk mengirimi kami pesan. Kami akan dengan senang hati membantu Anda."
+    image: "/images/banner/even-kartini.jpg",
+    title: "",
+    description: ""
   },
-  {
-    image: "/images/promo3.jpeg",
-    title: "Aplikasi Booking Rusunawa",
-    description: "Mewujudkan Perumahan Rakyat dan Kawasan Permukiman Provinsi DKI Jakarta yang layak huni, terjangkau, aman, terpadu, dan berkelanjutan."
-  }
 ];
 
 export default function BannerSlider() {
@@ -49,7 +59,7 @@ export default function BannerSlider() {
               animate={{ scale: 1 }}
               transition={{ duration: 2 }}
             />
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
@@ -57,7 +67,7 @@ export default function BannerSlider() {
             >
               <h2 className="text-2xl font-bold mb-2">{banner.title}</h2>
               <p className="text-lg">{banner.description}</p>
-            </motion.div>
+            </motion.div> */}
           </div>
         ))}
       </Slider>
