@@ -26,8 +26,9 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
-, "components/Maps/index.tsx"  ],
+    ".next/types/**/*.ts",
+    "components/Maps/index.tsx"
+  ],
   "exclude": [
     "node_modules"
   ]

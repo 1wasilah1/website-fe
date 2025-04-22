@@ -1,13 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { setCookie, deleteCookie } from "cookies-next";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { FaUser, FaLock } from "react-icons/fa";
 import { MdOutlineEmail, MdCalendarMonth } from "react-icons/md";
 import logoJayaRaya from "../../../public/images/logo-jaya-raya.png";
 import logoDprkp from "../../../public/images/logo-dprkp-back-putih.png";
 
 export default function LoginPage() {
+  //when login remove data token dan user id
+  deleteCookie("token");
+  deleteCookie("u_id");
+
+  const router = useRouter();
+
   const [statusForm, setStatusForm] = useState("login");
 
   const [username, setUsername] = useState("");
@@ -16,11 +24,76 @@ export default function LoginPage() {
   const [birthDate, setBirthDate] = useState("");
   const [email, setEmail] = useState("");
 
-  const handleLogin = (e: React.FormEvent) => {
+  const [isLoading, setLoading] = useState(false);
+
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+
     // Handle login logic here
-    console.log({ username, password });
+    try {
+      setLoading(true);
+      const formData = {
+        username,
+        password,
+      };
+
+      fetch("/api/web/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Credential": "true",
+        },
+        body: JSON.stringify(formData),
+      }).then(async (response) => {
+        if (
+          response.ok &&
+          (response.status === 200 || response.status === 201)
+        ) {
+          const result = await response.json();
+          setCookie("token", result?.token);
+          authUser(result?.token);
+        } else {
+          setLoading(false);
+          console.error("Error login:", response);
+          throw await response;
+        }
+      });
+    } catch (error) {
+      //need pop up error login
+      setLoading(false);
+      throw error;
+    }
   };
+
+  async function authUser(token) {
+    try {
+      fetch("/api/web/api/auth/me", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `Bearer ${token}`,
+        },
+      }).then(async (response) => {
+        if (
+          response.ok &&
+          (response.status === 200 || response.status === 201)
+        ) {
+          setLoading(false);
+          const result = await response.json();
+          setCookie("u_id", result?._id);
+          router.push("/page");
+        } else {
+          //need pop up error login
+          setLoading(false);
+          console.error("Error login:", response);
+          throw await response;
+        }
+      });
+    } catch (error) {
+      console.error("Error login:", error);
+    }
+  }
 
   const handleResetPassword = (e: React.FormEvent) => {
     e.preventDefault();
@@ -138,13 +211,30 @@ export default function LoginPage() {
                     Lupa password
                   </a>
                 </div>
-                <button
-                  id="btn-login"
-                  type="submit"
-                  className="w-full bg-[#376F04] text-white py-2 rounded transition"
-                >
-                  Masuk
-                </button>
+
+                {isLoading ? (
+                  <div className="flex">
+                    <button
+                      id="btn-loading"
+                      disabled
+                      type="button"
+                      className="w-full bg-[#376F04] text-white py-2 rounded transition"
+                    >
+                      Loading…
+                    </button>
+                  </div>
+                ) : (
+                  <>
+                    <button
+                      id="btn-login"
+                      type="submit"
+                      className="w-full bg-[#376F04] text-white py-2 rounded transition disabled:bg-[#93bc7e]"
+                      disabled={username === "" || password === ""}
+                    >
+                      Masuk
+                    </button>
+                  </>
+                )}
               </>
             ) : (
               <button

@@ -9,6 +9,7 @@ export default function GoldAnalysis() {
   const [videoDescription, setVideoDescription] = useState("");
   const [videoAuthor, setVideoAuthor] = useState("");
   const [publishDate, setPublishDate] = useState("");
+  const videoID = process.env.VIDEO_ID;
 
   useEffect(() => {
     async function fetchVideoDetails() {
@@ -18,7 +19,7 @@ export default function GoldAnalysis() {
         );
         const data = await response.json();
 
-        if (data.items.length > 0) {
+        if (data && data.items.length > 0) {
           const snippet = data.items[0].snippet;
           setVideoTitle(snippet.title);
           setVideoDescription(snippet.description);
@@ -58,7 +59,7 @@ export default function GoldAnalysis() {
           <iframe 
             width="100%" 
             height="100%" 
-            src={`https://www.youtube.com/embed/${VIDEO_ID}`} 
+            src={`https://www.youtube.com/embed/${videoID}`} 
             title={videoTitle} 
             frameBorder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
