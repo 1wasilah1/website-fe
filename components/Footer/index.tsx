@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-[#BDD918] via-[#376F04] to-[#1E5B00] text-white py-10 font-poppins">
+    <footer className="bg-[#104c61] text-white py-10 font-poppins">
       <div className="container mx-auto px-6 lg:px-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Informasi Perusahaan */}
@@ -22,7 +22,7 @@ const Footer = () => {
               <input type="text" placeholder="Nama Lengkap" className="w-full px-3 py-2 rounded-md bg-gray-100 mb-3" />
               <input type="email" placeholder="E-mail" className="w-full px-3 py-2 rounded-md bg-gray-100 mb-3" />
               <textarea placeholder="Pesan" className="w-full px-3 py-2 rounded-md bg-gray-100 h-24 mb-3"></textarea>
-              <button type="submit" className="bg-orange-500 text-white px-4 py-2 rounded-md">Kirim Pesan</button>
+              <button type="submit" className="bg-[#f98025] text-white px-4 py-2 rounded-md">Kirim Pesan</button>
             </form>
           </div>
 

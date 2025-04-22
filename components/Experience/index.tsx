@@ -9,6 +9,8 @@ import tahapRusunawa from "../../public/images/tahap/3-03.png";
 
 import appStore from "../../public/images/logo/appstore.png";
 import playStore from "../../public/images/logo/playstore.png";
+import customerWeb from "../../public/images/logo/customer-web.png";
+
 
 const images = {
   tahapMasuk: tahapMasuk,
@@ -20,12 +22,17 @@ export default function SecureTransaction() {
   const [activeTab, setActiveTab] = useState("tahapMasuk");
 
   const openApps = (type) => {
-    if (type === "android")
+    if (type === "android") {
       window.open(
         "https://play.google.com/store/apps/details?id=com.dprkp.rusun",
         "_blank"
       );
-    else {
+    } else if (type === "web") {
+      window.open(
+        "https://sirukim.jakarta.go.id/sirukim-web/",
+        "_blank"
+      );
+    } else {
       window.open(
         "http://apps.apple.com/id/app/sirukim/id1643825692",
         "_blank"
@@ -73,6 +80,14 @@ export default function SecureTransaction() {
               width={100}
               height={50}
               onClick={() => openApps("ios")}
+              className="cursor-pointer"
+            />
+            <Image
+              src={customerWeb}
+              alt="Logo Sirukim Web"
+              width={100}
+              height={50}
+              onClick={() => openApps("web")}
               className="cursor-pointer"
             />
           </div>

@@ -101,9 +101,9 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex h-screen">
+    <div className="h-screen flex">
       {/* Kiri (Gradient background) */}
-      <div className="w-1/2 bg-gradient-to-r from-[#BDD918] via-[#376F04] to-[#1E5B00] text-white flex flex-col justify-center items-center p-10 rounded-r-[80px]">
+      <div className="w-1/2 bg-[#104c61] text-white flex flex-col justify-center items-center p-10 rounded-r-[80px]">
         <div className="flex">
           <Image
             id="img-logo-raya-dki"
@@ -131,7 +131,7 @@ export default function LoginPage() {
       <div className="w-1/2 flex flex-col justify-center items-center px-10">
         <div className="bg-white shadow-lg rounded-lg p-10 w-full max-w-md">
           <div className="flex justify-center mb-2">
-            <div className="bg-[#376F04] rounded-full p-4">
+            <div className="bg-[#f98025] rounded-full p-4">
               <FaUser className="text-white text-2xl" />
             </div>
           </div>
@@ -218,7 +218,7 @@ export default function LoginPage() {
                       id="btn-loading"
                       disabled
                       type="button"
-                      className="w-full bg-[#376F04] text-white py-2 rounded transition"
+                      className="w-full bg-[#f98025] text-white py-2 rounded transition"
                     >
                       Loading…
                     </button>
@@ -228,7 +228,7 @@ export default function LoginPage() {
                     <button
                       id="btn-login"
                       type="submit"
-                      className="w-full bg-[#376F04] text-white py-2 rounded transition disabled:bg-[#93bc7e]"
+                      className="w-full bg-[#f98025] text-white py-2 rounded transition disabled:bg-[#F69000]"
                       disabled={username === "" || password === ""}
                     >
                       Masuk

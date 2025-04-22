@@ -61,43 +61,11 @@ const features = [
     bgColor: "bg-gray-100",
   },
   {
-    icon: <FaCalculator className="text-xl text-black" />,
-    title: "SIMONTER-CAPCIP",
-    description: "SIMONTER-CAPCIP",
-    linkText: "Selengkapnya",
-    linkHref: "https://simonter-capcip.com/",
-    bgColor: "bg-gray-100",
-  },
-  {
-    icon: <FaLaptop className="text-xl text-black" />,
-    title: "KMPRO",
-    description: "KMPRO",
-    linkText: "Selengkapnya",
-    linkHref: "#",
-    bgColor: "bg-gray-100",
-  },
-  {
     icon: <FaHome className="text-xl text-black" />,
     title: "Peningkatan Kualitas Perumahan Kumuh",
     description: "",
     linkText: "Selengkapnya",
     linkHref: "https://dprkp.jakarta.go.id/penataan_kumuh/",
-    bgColor: "bg-gray-100",
-  },
-  {
-    icon: <Image src={logoPsu} alt="Logo Psu" width={50} height={50} />,
-    title: "Digitalisasi",
-    description: "Digitalisasi Infrastuktur RW Kumuh Jakarta Barat",
-    linkText: "Selengkapnya",
-    linkHref: "https://jakartasatu.jakarta.go.id/portal/apps/experiencebuilder/experience/?id=b2c080f0860f40e1859e642cbf2e6c48",
-    bgColor: "bg-gray-100",
-  },
-  {
-    icon: <Image src={logoMitrum} alt="Logo Mitrum" width={50} height={50} />,
-    title: "Mitra Perumahan",
-    description: "Mitra Perumahan",
-    linkText: "Selengkapnya",
-    linkHref: "https://mitrum.dprkp.id/",
     bgColor: "bg-gray-100",
   },
 ];
@@ -156,17 +124,20 @@ export default function ThumbnailGrid() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="p-6 border rounded-lg shadow-md flex flex-col items-start mx-2 md:h-52"
+                className="p-6 border rounded-lg shadow-md flex flex-col items-start mx-2 md:h-52 bg-white text-center"
               >
-                <div
-                  className={`p-2 rounded-full ${feature.bgColor} w-12 h-12 flex items-center justify-center`}
-                >
-                  {feature.icon}
+                <div className="w-full justify-items-center">
+                  <div
+                    className={`p-2 rounded-full ${feature.bgColor} w-20 h-20 flex items-center justify-center`}
+                  >
+                    {feature.icon}
+                  </div>
                 </div>
+
                 <h3 className="mt-4 text-md font-bold text-black">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-black mt-2">{feature.description}</p>
+                {/* <p className="text-sm text-black mt-2">{feature.description}</p> */}
                 <a
                   href={feature.linkHref}
                   className="mt-3 text-[#376F04] font-semibold text-sm"
