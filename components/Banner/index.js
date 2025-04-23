@@ -22,12 +22,12 @@ const banners = [
   //   description: "Mewujudkan Perumahan Rakyat dan Kawasan Permukiman Provinsi DKI Jakarta yang layak huni, terjangkau, aman, terpadu, dan berkelanjutan."
   // },
   {
-    image: "/images/banner/banner-rusunawa.jpg",
+    image: "/images/banner/banner-kartini.jpg",
     title: "",
     description: ""
   },
   {
-    image: "/images/banner/banner-kartini.jpg",
+    image: "/images/banner/banner-rusunawa.jpg",
     title: "",
     description: ""
   },
