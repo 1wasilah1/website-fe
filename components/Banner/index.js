@@ -31,6 +31,11 @@ const banners = [
     title: "",
     description: ""
   },
+  {
+    image: "/images/banner/banner-hunianvertikal.jpg",
+    title: "",
+    description: ""
+  },
 ];
 
 export default function BannerSlider() {
