@@ -42,7 +42,7 @@ export default function Announcement() {
           <p className="text-sm mt-2 text-gray-700">{item.excerpt}</p>
           <a
             href="#"
-            className="text-blue-600 text-sm font-semibold mt-4 block"
+            className="text-[#104c61] text-sm font-semibold mt-4 block"
           >
             Selengkapnya →
           </a>
@@ -50,50 +50,32 @@ export default function Announcement() {
       </>
     );
   };
-  // return (
-  //   <></>
-  // );
-  //   <div className="border rounded-lg p-4 bg-white shadow">
-  //   <h2 className={⁠ text-md font-bold mb-2 flex items-center gap-2 ${color} ⁠}>
-  //     <FaRegNewspaper /> {title}
-  //   </h2>
-  //   <h3 className="text-lg font-semibold">{item.title}</h3>
-  //   <p className="text-sm text-gray-500">{item.date}</p>
-  //   <p className="text-sm mt-2 text-gray-700">{item.excerpt}</p>
-  //   <a
-  //     href="#"
-  //     className="text-blue-600 text-sm font-semibold mt-4 block"
-  //   >
-  //     Selengkapnya →
-  //   </a>
-  // </div>
-
-  // );
+  
 
   return (
     <main className="p-4">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-7xl mx-auto">
         {/* Left Section (Statistics) */}
         <div className="border rounded-lg p-4 bg-white shadow">
-          <h2 className="text-md font-bold mb-4 text-gray-800">STATISTIK</h2>
+          <h2 className="text-md font-bold mb-2 text-[#f98025]">STATISTIK</h2>
           <div className="mb-2">
             <p className="text-lg font-bold">Jumlah Permohonan Informasi</p>
-            <p className="text-md">{permohonanInformasi}</p>
+            <p className="text-2xl text-[#53b1b1] text-center font-bold">{permohonanInformasi}</p>
           </div>
           <div className="mb-2">
             <p className="text-lg font-bold">Jumlah Kunjungan Tamu</p>
-            <p className="text-md">{kunjunganTamu}</p>
+            <p className="text-2xl text-[#53b1b1] text-center font-bold">{kunjunganTamu}</p>
           </div>
           <div className="mb-2">
             <p className="text-lg font-bold">Jumlah Pengunjung Website</p>
-            <p className="text-md">{pengunjungWebsite}</p>
+            <p className="text-2xl text-[#53b1b1] text-center font-bold">{pengunjungWebsite}</p>
           </div>
         </div>
 
         {/* Existing Grids */}
-        {renderCard("Berita Terkini", "text-orange-600", beritaTerkini)}
-        {renderCard("Berita BUMD", "text-green-600", beritaBUMD)}
-        {renderCard("Berita Jakarta", "text-blue-600", beritaJakarta)}
+        {renderCard("Berita Terkini", "text-[#f98025]", beritaTerkini)}
+        {renderCard("Berita BUMD", "text-[#f98025]", beritaBUMD)}
+        {renderCard("Berita Jakarta", "text-[#f98025]", beritaJakarta)}
       </div>
     </main>
   );

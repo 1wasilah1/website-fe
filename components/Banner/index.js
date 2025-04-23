@@ -47,7 +47,7 @@ export default function BannerSlider() {
   };
 
   return (
-    <div className="relative w-full py-6">
+    <div className="relative w-full py-6 mt-[50px]">
       <Slider {...settings}>
         {banners.map((banner, index) => (
           <div key={index} className="relative w-full">

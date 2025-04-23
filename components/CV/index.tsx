@@ -19,7 +19,7 @@ export default function FinancialSummary() {
             <p className="text-white">Total Rusunawa yang tersedia</p>
           </div>
         </div>
-        <p className="text-right text-[#f98025] text-sm mt-4">Updated 11 April 2025</p>
+        <p className="text-right text-[#f98025] text-sm mt-4">Sumber: UPRS (11 April 2025)</p>
       </section>
     );
   }
