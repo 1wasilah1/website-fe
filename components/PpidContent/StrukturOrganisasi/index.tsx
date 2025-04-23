@@ -5,7 +5,7 @@ export default function StrukturOrganisasi() {
   return (
     <section className="py-10 bg-gray-100 my-4">
       <div className="text-center m-4">
-        <h2 className="text-2xl font-bold text-green-700 mb-2">
+        <h2 className="text-2xl font-bold text-[#f98025] mb-2">
           Struktur Organisasi
         </h2>
       </div>

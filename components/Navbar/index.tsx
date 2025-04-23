@@ -128,7 +128,7 @@ const Navbar = () => {
             {/* Login Button */}
             <Link
               href="/login"
-              className="flex items-center bg-[#f98025] text-white px-4 py-2 rounded-md text-xs hover:bg-[#F69000]"
+              className="flex items-center bg-[#f98025] text-white px-4 py-2 rounded-md text-xs"
             >
               <Lock size={14} className="mr-1" /> Login
             </Link>

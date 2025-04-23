@@ -4,14 +4,14 @@ import React from "react";
 export default function TanggungJawab() {
 
   return (
-    <section className="py-10 bg-green-50 my-4">
+    <section className="py-10 bg-[#104c61] my-4">
       <div className="max-w-6xl mx-auto">
         <div>
-          <h2 className="text-center text-2xl font-bold mb-6 text-green-700">
+          <h2 className="text-center text-2xl font-bold mb-6 text-[#f98025]">
             Tanggung Jawab, Tugas, dan Wewenang
           </h2>
           <div className="p-4 m-2">
-            <p className="text-gray-600 font-sans">
+            <p className="text-white font-sans">
               Tanggung jawab, tugas, dan wewenang PPID DPRKP sesuai dengan
               Peraturan Gubernur No. 175 Tahun 2016 tentang Layanan Informasi
               Publik dan Keputusan Kepala Dinas Perumahan Rakyat dan Kawasan
@@ -24,7 +24,7 @@ export default function TanggungJawab() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 sm:grid-cols-1 gap-6">
           <div className="bg-white p-4 m-2 h-full">
             <div className="text-center mb-4">
-              <h2 className="text-2xl font-semibold text-green-700">
+              <h2 className="text-2xl font-semibold text-[#f98025]">
                 Tanggung Jawab
               </h2>
             </div>
@@ -47,7 +47,7 @@ export default function TanggungJawab() {
           </div>
           <div className="bg-white p-4 m-2 h-full">
             <div className="text-center mb-4">
-              <h2 className="text-2xl font-semibold text-green-700">Tugas</h2>
+              <h2 className="text-2xl font-semibold text-[#f98025]">Tugas</h2>
             </div>
             <div>
               <p className="text-gray-600">
@@ -71,7 +71,7 @@ export default function TanggungJawab() {
           </div>
           <div className="bg-white p-4 m-2 h-full">
             <div className="text-center mb-4">
-              <h2 className="text-2xl font-semibold text-green-700">
+              <h2 className="text-2xl font-semibold text-[#f98025]">
                 Wewenang
               </h2>
             </div>

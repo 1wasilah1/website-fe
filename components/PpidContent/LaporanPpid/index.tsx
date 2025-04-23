@@ -116,9 +116,9 @@ export default function LaporanPpid() {
   };
 
   return (
-    <section className="py-10 bg-green-50 my-4">
+    <section className="py-10 bg-[#104c61] my-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-center text-2xl font-semibold mb-6 text-green-700">
+        <h2 className="text-center text-2xl font-semibold mb-6 text-[#f98025]">
           Laporan PPID
         </h2>
         <div className="mx-2">
@@ -139,7 +139,7 @@ export default function LaporanPpid() {
 
         <div className="overflow-x-auto space-y-4 w-full mx-2">
           <table className="table table-compact min-w-max overflow-x-scroll w-full">
-            <thead className="rounded-md bg-[#1E5B00] text-white">
+            <thead className="rounded-md bg-[#f98025] text-white">
               <tr className="h-[44px]">
                 <th className="w-14 p-2">No</th>
                 <th className="w-auto">Nama Laporan</th>
@@ -163,7 +163,7 @@ export default function LaporanPpid() {
                       </td>
                       <td className="w-10 right-0 z-5 text-white text-xs font-sans text-center">
                         <button
-                          className="bg-[#4e8234] p-2 rounded-sm"
+                          className="bg-[#f98025] p-2 rounded-sm"
                           onClick={() => downloadLaporan(row.link)}
                         >
                           Lihat Data

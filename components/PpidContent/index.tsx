@@ -12,7 +12,7 @@ export default function PpidContent() {
     <>
       <section className="py-10 bg-gray-100 my-4">
         <div className="text-center m-4">
-          <h2 className="text-2xl font-bold text-green-700 mb-2">
+          <h2 className="text-2xl font-bold text-[#f98025] mb-2">
             Profil Pejabat Pengelola Informasi dan Dokumentasi (PPID)
           </h2>
           <p className="text-gray-600">
@@ -32,7 +32,7 @@ export default function PpidContent() {
 
       <section className="py-10 bg-gray-100 my-4">
         <div className="text-center m-4">
-          <h2 className="text-2xl font-bold text-green-700 mb-2">
+          <h2 className="text-2xl font-bold text-[#f98025] mb-2">
             Biaya Pelayanan Informasi Publik
           </h2>
           <p className="text-gray-600">

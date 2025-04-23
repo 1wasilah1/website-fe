@@ -37,7 +37,7 @@ export default function MediaGaleri() {
   return (
     <section className="py-10 bg-gray-100 my-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-center text-2xl font-semibold mb-6 text-black">
+        <h2 className="text-center text-2xl font-semibold mb-6 text-[#f98025]">
           Media Galeri
         </h2>
         <div className="overflow-auto grid md:grid-cols-3 sm:grid-cols-1 gap-4">
