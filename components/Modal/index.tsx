@@ -27,7 +27,7 @@ export default function ModalContent({ emitClickEvent }) {
               <MdOutlineClose
                 className="text-black cursor-pointer"
                 fontSize={32}
-                onClick={() => handleClick(true)}
+                onClick={() => handleClick(false)}
                 id="modal-close"
               />
             </div>

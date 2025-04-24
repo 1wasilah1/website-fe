@@ -58,7 +58,7 @@ export default function SecureTransaction() {
         <div>
           <h2 className="text-2xl font-bold text-gray-900">
             Booking Rusunawa dan Hunian Terjangkau Milik di
-            <span className="text-[#BDD918]">&nbsp;Sirukim</span>
+            <span className="text-[#f98025]">&nbsp;Sirukim</span>
           </h2>
 
           <p className="text-gray-600 mt-2">
@@ -97,10 +97,10 @@ export default function SecureTransaction() {
             <div
               onClick={() => setActiveTab("tahapMasuk")}
               className={`p-4 bg-white rounded-lg shadow-md border cursor-pointer ${
-                activeTab === "tahapMasuk" ? "border-[#1E5B00]" : ""
+                activeTab === "tahapMasuk" ? "border-[#f98025]" : ""
               }`}
             >
-              <h3 className="font-semibold text-[#1E5B00]">
+              <h3 className="font-semibold text-[#104c61]">
                 Masuk ke dalam aplikasi
               </h3>
               <p className="text-gray-600">
@@ -110,10 +110,10 @@ export default function SecureTransaction() {
             <div
               onClick={() => setActiveTab("tahapRusunawa")}
               className={`p-4 bg-white rounded-lg shadow-md border cursor-pointer ${
-                activeTab === "tahapRusunawa" ? "border-[#1E5B00]" : ""
+                activeTab === "tahapRusunawa" ? "border-[#f98025]" : ""
               }`}
             >
-              <h3 className="font-semibold text-[#1E5B00]">
+              <h3 className="font-semibold text-[#104c61]">
                 Booking Rusunawa
               </h3>
               <p className="text-gray-600">
@@ -123,10 +123,10 @@ export default function SecureTransaction() {
             <div
               onClick={() => setActiveTab("tahapHunianTerjangkau")}
               className={`p-4 bg-white rounded-lg shadow-md border cursor-pointer ${
-                activeTab === "tahapHunianTerjangkau" ? "border-[#1E5B00]" : ""
+                activeTab === "tahapHunianTerjangkau" ? "border-[#f98025]" : ""
               }`}
             >
-              <h3 className="font-semibold text-[#1E5B00]">
+              <h3 className="font-semibold text-[#104c61]">
                 Pendaftaran Hunian Terjangkau Milik
               </h3>
               <p className="text-gray-600">

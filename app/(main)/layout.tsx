@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   const [statusModal, setStatusModal] = useState(true);
 
   function handleClickEvent(data) {
-    setStatusModal(false);
+    setStatusModal(data);
   }
 
   return (
