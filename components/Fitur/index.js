@@ -7,8 +7,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import logoDprkp from "../../public/images/logo-dprkp-back-putih.png";
-import logoMitrum from "../../public/images/logo/mitrum.png";
-import logoPsu from "../../public/images/logo/psu.png";
+// import logoMitrum from "../../public/images/logo/mitrum.png";
+// import logoPsu from "../../public/images/logo/psu.png";
 import logoSidakon from "../../public/images/logo/sidakon-small.png";
 import logoSirukim from "../../public/images/logo/sirukim.png";
 

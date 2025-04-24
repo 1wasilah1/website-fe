@@ -1,24 +1,40 @@
 "use client";
 import "../../styles/globals.css";
 // import { Inter } from "next/font/google";
-import { ReactNode } from "react";
 import { ThemeProvider } from "next-themes";
-import Navbar from "../../components/Navbar";
+import { ReactNode, useState } from "react";
 import FloatMenu from "../../components/FloatMenu";
-import ScrollToTop from "../../components/ScrollToTop";
-import Lines from "../../components/Lines";
 import Footer from "../../components/Footer";
+import Lines from "../../components/Lines";
+import ModalContent from "../../components/Modal";
+import Navbar from "../../components/Navbar";
+import ScrollToTop from "../../components/ScrollToTop";
 
 // const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+  const [statusModal, setStatusModal] = useState(true);
+
+  function handleClickEvent(data) {
+    setStatusModal(false);
+  }
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`dark:bg-black`}>
-        <ThemeProvider enableSystem={false} attribute="class" defaultTheme="light">
+        <ThemeProvider
+          enableSystem={false}
+          attribute="class"
+          defaultTheme="light"
+        >
           {/* Global Layout */}
           <Lines />
           <Navbar />
+          {statusModal ? (
+            <ModalContent emitClickEvent={handleClickEvent} />
+          ) : (
+            <></>
+          )}
           <FloatMenu />
           {/* <Header /> */}
           {children}

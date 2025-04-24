@@ -169,9 +169,9 @@ export default function AplikasiTerkait() {
         </h2>
         <Slider {...settings}>
           {taxItems.map((item, index) => (
-            <div className="m-2 w-full p-2">
+            <div className="m-2 w-full p-2" key={index}>
               <div
-                key={index}
+                id={`aplikasi-terkait-item-${index}`}
                 className="bg-white shadow-md rounded-xl p-5 flex-shrink-0 h-[90px]"
                 onClick={() => openNewTab(item.link)}
               >
