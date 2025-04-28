@@ -14,8 +14,53 @@ import { useState } from "react";
 const Sidebar = () => {
   // const cookieStore = await cookies();
   // const id = cookieStore.get("u_id")?.value;
-
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(true);
+
+  const responseData = {
+    _id: "68070515ed7f15f1d2854897",
+    username: "testcoba2",
+    role: "admin",
+    authmenu: [
+      {
+        _id: "67f519df256398a13e64e4e7",
+        nama: "Dashboard",
+        path: "/organisasi",
+        icon: "Users",
+        parentId: null,
+        urutan: 0,
+        aktif: true,
+        createdAt: "2025-04-08T12:43:11.468Z",
+        updatedAt: "2025-04-24T07:06:17.706Z",
+        __v: 0,
+        name: "Organisasi",
+        children: [],
+      },
+      {
+        _id: "67f51a77256398a13e64e4e9",
+        nama: "Profil",
+        path: "/profil",
+        icon: "BuildingIcon",
+        parentId: null,
+        urutan: 0,
+        aktif: true,
+        createdAt: "2025-04-08T12:45:43.765Z",
+        updatedAt: "2025-04-08T12:45:43.765Z",
+        __v: 0,
+        children: [],
+      },
+      {
+        _id: "6809de7eed7f15f1d2854940",
+        name: "PPID",
+        path: "/ppid",
+        icon: "DashboardIcon",
+        parentId: null,
+        createdAt: "2025-04-24T06:47:26.460Z",
+        updatedAt: "2025-04-24T06:47:26.460Z",
+        __v: 0,
+        children: [],
+      },
+    ],
+  };
 
   const toggleSidebar = () => {
     console.log("masuk sini");
@@ -45,13 +90,22 @@ const Sidebar = () => {
       </div>
 
       <div className="space-y-2 flex flex-col">
-        <SidebarItem
-          key={1}
-          isSidebarExpanded={isSidebarExpanded}
-          icon={<Home size={20} />}
-          label="Home"
-          active
-        />
+        {responseData && responseData.authmenu.length > 0 ? (
+          <>
+            {responseData.authmenu.map((row, index) => (
+              <SidebarItem
+                key={index}
+                isSidebarExpanded={isSidebarExpanded}
+                icon={row.icon}
+                label={row.nama || row.name}
+                active={index === 0}
+              />
+            ))}
+          </>
+        ) : (
+          <></>
+        )}
+        {/* 
         <SidebarItem
           key={2}
           icon={<Compass size={20} />}
@@ -71,17 +125,17 @@ const Sidebar = () => {
           label="Subscriptions"
           active={""}
           isSidebarExpanded={isSidebarExpanded}
-        />
+        /> */}
       </div>
 
-      <hr className="my-4 border-gray-700" />
+      {/* <hr className="my-4 border-gray-700" />
 
       {isSidebarExpanded ? (
         <div className="text-sm text-gray-400 mb-2">Library</div>
       ) : (
         <></>
-      )}
-      <div className="space-y-2 flex flex-col">
+      )} */}
+      {/* <div className="space-y-2 flex flex-col">
         <SidebarItem
           key={4}
           icon={<Clock size={20} />}
@@ -110,7 +164,7 @@ const Sidebar = () => {
           active={""}
           isSidebarExpanded={isSidebarExpanded}
         />
-      </div>
+      </div> */}
 
       <div className="mt-auto pt-4 border-t border-gray-700 flex items-center gap-2">
         {/* <Image
@@ -143,7 +197,7 @@ const SidebarItem = ({ icon, label, active, isSidebarExpanded }) => (
       active ? "bg-gray-800" : ""
     }`}
   >
-    {icon}
+    <Home size={20} />
     <span className={`text-sm ${isSidebarExpanded ? "" : "hidden"}`}>
       {label}
     </span>

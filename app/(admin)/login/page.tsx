@@ -37,12 +37,11 @@ export default function LoginPage() {
         password,
       };
 
-      fetch("/api/web/api/auth/login", {
+      await fetch("https://10.15.38.162:3100/api/web/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Credential": "true",
+         
         },
         body: JSON.stringify(formData),
       }).then(async (response) => {
@@ -68,7 +67,7 @@ export default function LoginPage() {
 
   async function authUser(token) {
     try {
-      fetch("/api/web/api/auth/me", {
+      fetch("https://10.15.38.162:3100/api/web/api/auth/me", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
