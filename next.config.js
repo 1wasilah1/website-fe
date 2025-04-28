@@ -7,6 +7,7 @@ const nextConfig = {
     images: {
       domains: ['dprkp.jakarta.go.id'],
     },
+    // reactDevOverlay: false
   };
 
 module.exports = nextConfig

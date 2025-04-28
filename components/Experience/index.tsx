@@ -11,7 +11,6 @@ import appStore from "../../public/images/logo/appstore.png";
 import playStore from "../../public/images/logo/playstore.png";
 import customerWeb from "../../public/images/logo/customer-web.png";
 
-
 const images = {
   tahapMasuk: tahapMasuk,
   tahapHunianTerjangkau: tahapHunianTerjangkau,
@@ -28,10 +27,7 @@ export default function SecureTransaction() {
         "_blank"
       );
     } else if (type === "web") {
-      window.open(
-        "https://sirukim.jakarta.go.id/sirukim-web/",
-        "_blank"
-      );
+      window.open("https://sirukim.jakarta.go.id/sirukim-web/", "_blank");
     } else {
       window.open(
         "http://apps.apple.com/id/app/sirukim/id1643825692",
@@ -65,35 +61,37 @@ export default function SecureTransaction() {
             Solusi kemudahan bagi warga untuk memiliki hunian di DKI Jakarta
             dengan hunian yang terjangkau dengan satu aplikasi.
           </p>
-          <div className="flex gap-2 mt-4">
-            <Image
-              src={playStore}
-              alt="Logo App Store"
-              width={100}
-              height={50}
-              onClick={() => openApps("android")}
-              className="cursor-pointer"
-            />
-            <Image
+          <div className="mt-4 justify-items-center md:justify-items-start">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+              <Image
+                src={playStore}
+                alt="Logo App Store"
+                width={0}
+                height={50}
+                onClick={() => openApps("android")}
+                className="cursor-pointer h-[49px]"
+              />
+              <Image
               src={appStore}
               alt="Logo App Store"
-              width={100}
+              width={0}
               height={50}
               onClick={() => openApps("ios")}
-              className="cursor-pointer"
+              className="cursor-pointer h-[49px]"
             />
             <Image
               src={customerWeb}
               alt="Logo Sirukim Web"
-              width={100}
+              width={0}
               height={50}
               onClick={() => openApps("web")}
-              className="cursor-pointer"
+              className="cursor-pointer h-[48px]"
             />
+            </div>
           </div>
 
           {/* Feature Tabs */}
-          <div className="mt-6 space-y-4">
+          <div className="mt-4 space-y-4">
             <div
               onClick={() => setActiveTab("tahapMasuk")}
               className={`p-4 bg-white rounded-lg shadow-md border cursor-pointer ${
@@ -117,7 +115,8 @@ export default function SecureTransaction() {
                 Booking Rusunawa
               </h3>
               <p className="text-gray-600 text-lg">
-                Pesan Rusunawa sesuai dengan lokasi yang diinginkan menjadi lebih mudah dan cepat dengan satu aplikasi.
+                Pesan Rusunawa sesuai dengan lokasi yang diinginkan menjadi
+                lebih mudah dan cepat dengan satu aplikasi.
               </p>
             </div>
             <div
@@ -130,7 +129,8 @@ export default function SecureTransaction() {
                 Pendaftaran Hunian Terjangkau Milik
               </h3>
               <p className="text-gray-600 text-lg">
-                Menjadi lebih mudah untuk miliki hunian yang terjangkau di DKI Jakarta dengan satu aplikasi.
+                Menjadi lebih mudah untuk miliki hunian yang terjangkau di DKI
+                Jakarta dengan satu aplikasi.
               </p>
             </div>
           </div>
