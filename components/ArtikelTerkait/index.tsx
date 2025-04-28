@@ -164,7 +164,7 @@ export default function AplikasiTerkait() {
   return (
     <section className="py-4 bg-[#104c61]">
       <div className="container mx-auto text-center mb-5">
-        <h2 className="text-2xl font-bold text-white mb-6">
+        <h2 className="text-2xl font-bold text-white mb-6 font-[inherit]">
           Aplikasi Terkait
         </h2>
         <Slider {...settings}>

@@ -55,7 +55,7 @@ export default function SecureTransaction() {
         </div>
 
         {/* Right Side - Text */}
-        <div>
+        <div className="font-[inherit]">
           <h2 className="text-2xl font-bold text-gray-900">
             Booking Rusunawa dan Hunian Terjangkau Milik di
             <span className="text-[#f98025]">&nbsp;Sirukim</span>
@@ -100,10 +100,10 @@ export default function SecureTransaction() {
                 activeTab === "tahapMasuk" ? "border-[#f98025]" : ""
               }`}
             >
-              <h3 className="font-semibold text-[#104c61]">
+              <h3 className="font-semibold text-[#f98025] text-lg">
                 Masuk ke dalam aplikasi
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 text-lg">
                 Masuk dan registrasi aplikasi lebih mudah.
               </p>
             </div>
@@ -113,10 +113,10 @@ export default function SecureTransaction() {
                 activeTab === "tahapRusunawa" ? "border-[#f98025]" : ""
               }`}
             >
-              <h3 className="font-semibold text-[#104c61]">
+              <h3 className="font-semibold text-[#f98025] text-lg">
                 Booking Rusunawa
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 text-lg">
                 Pesan Rusunawa sesuai dengan lokasi yang diinginkan menjadi lebih mudah dan cepat dengan satu aplikasi.
               </p>
             </div>
@@ -126,10 +126,10 @@ export default function SecureTransaction() {
                 activeTab === "tahapHunianTerjangkau" ? "border-[#f98025]" : ""
               }`}
             >
-              <h3 className="font-semibold text-[#104c61]">
+              <h3 className="font-semibold text-[#f98025] text-lg">
                 Pendaftaran Hunian Terjangkau Milik
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 text-lg">
                 Menjadi lebih mudah untuk miliki hunian yang terjangkau di DKI Jakarta dengan satu aplikasi.
               </p>
             </div>

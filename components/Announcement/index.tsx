@@ -9,14 +9,14 @@ const beritaTerkini = {
     "Sebanyak enam Pasukan Oranye dikerahkan untuk membersihkan saluran air...",
 };
 
-const beritaBUMD = {
+const beritaEkonomi = {
   title: "PD Pasar Jaya Luncurkan Aplikasi Belanja Online",
   date: "Selasa, 22 April 2025 10:15",
   excerpt:
     "Aplikasi ini bertujuan memudahkan masyarakat belanja kebutuhan sehari-hari dari pasar tradisional...",
 };
 
-const beritaJakarta = {
+const beritaDprkp = {
   title: "Penyuluhan Pertanian di Kecamatan Matraman",
   date: "Selasa, 22 April 2025 13:25",
   excerpt:
@@ -54,7 +54,7 @@ export default function Announcement() {
 
   return (
     <main className="p-4">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-7xl mx-auto font-[inherit]">
         {/* Left Section (Statistics) */}
         <div className="border rounded-lg p-4 bg-white shadow">
           <h2 className="text-md font-bold mb-2 text-[#f98025]">STATISTIK</h2>
@@ -74,8 +74,8 @@ export default function Announcement() {
 
         {/* Existing Grids */}
         {renderCard("Berita Terkini", "text-[#f98025]", beritaTerkini)}
-        {renderCard("Berita BUMD", "text-[#f98025]", beritaBUMD)}
-        {renderCard("Berita Jakarta", "text-[#f98025]", beritaJakarta)}
+        {renderCard("Berita Ekonomi", "text-[#f98025]", beritaEkonomi)}
+        {renderCard("Berita DPRKP", "text-[#f98025]", beritaDprkp)}
       </div>
     </main>
   );
