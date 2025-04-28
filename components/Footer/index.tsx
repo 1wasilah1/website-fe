@@ -5,9 +5,6 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 font-[inherit]">
           {/* Informasi Perusahaan */}
           <div>
-            <div className="w-full border border-solid">
-            mapsny
-            </div>
             <h2 className="text-lg font-semibold">Alamat Utama</h2>
             <p className="mt-2 text-sm">
               Jl. Taman Jatibaru No.1, RT.17/RW.1, Kelurahan Cideng, Kecamatan Gambir, Kota Jakarta Pusat, 
