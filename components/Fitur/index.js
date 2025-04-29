@@ -80,6 +80,14 @@ const features = [
     linkText: "Selengkapnya",
     linkHref: "#",
     bgColor: "bg-gray-100",
+  },
+  {
+    icon: <FaHome className="text-7xl text-black" />,
+    title: "Spasial Perumahan",
+    description: "Spasial Perumahan",
+    linkText: "Selengkapnya",
+    linkHref: "#",
+    bgColor: "bg-gray-100",
   }
 ];
 
