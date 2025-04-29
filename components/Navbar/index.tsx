@@ -45,6 +45,7 @@ const Navbar = () => {
       subMenu: ["Rumah DP 0 Rupiah", "Peningkatan Kualitas Permukiman"],
     },
     { name: "PPID", path: "/ppid" },
+    { name: "Spasial Perumahan", path: "/spasialperumahan" },
     { name: "Kontak", path: "/kontak" },
   ];
 
