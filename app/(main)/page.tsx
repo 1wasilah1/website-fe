@@ -5,6 +5,7 @@ import Announcement from "../../components/Announcement";
 import ArtikelTerkait from "../../components/ArtikelTerkait";
 import Experience from "../../components/Experience";
 import Analysis from "../../components/Analysis";
+import Simulasi from "../../components/Simulasi";
 
 export const metadata = {
   title: "Dinas Perumahan Rakyat dan Permukiman",
@@ -21,6 +22,7 @@ export default function Home() {
       <Experience />
       <Announcement />
       <Analysis />
+      <Simulasi />
     </main>
   );
 }
