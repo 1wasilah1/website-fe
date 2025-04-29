@@ -45,11 +45,12 @@ const Navbar = () => {
       subMenu: ["Rumah DP 0 Rupiah", "Peningkatan Kualitas Permukiman"],
     },
     { name: "PPID", path: "/ppid" },
+    { name: "Spasial Perumahan", path: "/spasialperumahan" },
     { name: "Kontak", path: "/kontak" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white shadow-md dark:bg-gray-900 z-50">
+    <nav className="fixed top-0 left-0 w-full bg-white shadow-md dark:bg-gray-900 z-[10000] font-[inherit]">
       <div className="mx-auto px-6 py-3 flex justify-between items-center w-full">
         <Link href="/" className="flex items-center">
           <Image
@@ -106,7 +107,7 @@ const Navbar = () => {
                   <div className="absolute -top-6 left-10 right-0 h-6 bg-transparent" />
                   <div className="absolute left-0 top-0 h-4 w-4 -translate-x-1/2 -translate-y-1/2" />
                   {item.subMenu.map((sub, subIndex) => (
-                    <div>
+                    <div key={subIndex}>
                       <Link
                         key={subIndex}
                         href={`/${sub.toLowerCase().replace(/ /g, "-")}`}

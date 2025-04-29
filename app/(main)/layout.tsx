@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`dark:bg-black`}>
+      <body className={`dark:bg-black`} suppressHydrationWarning={true}>
         <ThemeProvider
           enableSystem={false}
           attribute="class"

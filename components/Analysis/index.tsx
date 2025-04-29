@@ -41,7 +41,7 @@ export default function GoldAnalysis() {
   return (
     <section className="px-6 py-10 bg-gray-100">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 items-center">
-        <div>
+        <div className="font-[inherit]">
           <h2 className="text-2xl font-bold">{videoTitle || "Memuat judul video..."}</h2>
           <h3 className="text-lg font-semibold mt-2">🎥 {videoAuthor || "Memuat author..."}</h3>
           <p className="text-gray-700 mt-2">{videoDescription || "Memuat deskripsi video..."}</p>

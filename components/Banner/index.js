@@ -41,18 +41,16 @@ const banners = [
 export default function BannerSlider() {
   const settings = {
     dots: true,
-    infinite: true,
-    speed: 1000,
+    infinite: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    arrows: false,
-    fade: true // Efek crossfade
+    // fade: true // Efek crossfade
   };
 
   return (
-    <div className="relative w-full py-6 mt-[50px]">
+    <div className="w-full py-10 mt-[50px]">
       <Slider {...settings}>
         {banners.map((banner, index) => (
           <div key={index} className="relative w-full">
