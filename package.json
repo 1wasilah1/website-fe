@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@radix-ui/react-select": "^2.2.2",
+    "class-variance-authority": "^0.7.1",
     "cookies-next": "^4.3.0",
     "framer-motion": "^12.6.3",
     "leaflet": "^1.9.4",
