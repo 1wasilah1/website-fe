@@ -21,8 +21,8 @@ export default function Home() {
       <ArtikelTerkait />
       <Experience />
       <Announcement />
-      <Analysis />
       <Simulasi />
+      <Analysis />
     </main>
   );
 }

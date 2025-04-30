@@ -50,7 +50,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white shadow-md dark:bg-gray-900 z-[10000] font-[inherit]">
+    <nav className="fixed top-0 left-0 w-full bg-white shadow-md dark:bg-gray-900 z-[1000] font-[inherit]">
       <div className="mx-auto px-6 py-3 flex justify-between items-center w-full">
         <Link href="/" className="flex items-center">
           <Image

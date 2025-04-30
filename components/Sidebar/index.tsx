@@ -18,7 +18,6 @@ const Sidebar = () => {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(true);
 
   const toggleSidebar = () => {
-    console.log("masuk sini");
     setIsSidebarExpanded(!isSidebarExpanded);
   };
 
