@@ -2,6 +2,9 @@
 import React, { useState } from "react";
 
 import BannerPage from "./Banner";
+import ProgramUnggulanPage from "./ProgramUnggulan";
+import TotalInformasiPage from "./TotalInformasi";
+
 
 export default function Homepage() {
   const [selectedTab, setSelectedTab] = useState("banner");
@@ -95,9 +98,14 @@ export default function Homepage() {
         <>
           <BannerPage />
         </>
+      ) : selectedTab === "programUnggulan" ? (
+        <ProgramUnggulanPage />
+      ): selectedTab === "totalInformasi" ? (
+        <TotalInformasiPage />
       ) : (
         <></>
-      )}
+      )
+      }
     </>
   );
 }

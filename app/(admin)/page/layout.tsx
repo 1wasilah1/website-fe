@@ -8,7 +8,7 @@ import Sidebar from "../../../components/Sidebar/index";
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`dark:bg-black`}>
+      <body className={`dark:bg-black`} suppressHydrationWarning>
         <div className="flex">
           <Sidebar />
           <div className="w-full overflow-x-auto bg-slate-100">
