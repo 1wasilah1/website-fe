@@ -63,7 +63,6 @@ const Sidebar = () => {
   };
 
   const toggleSidebar = () => {
-    console.log("masuk sini");
     setIsSidebarExpanded(!isSidebarExpanded);
   };
 

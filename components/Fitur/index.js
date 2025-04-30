@@ -5,32 +5,28 @@ import { FaCalculator, FaHome, FaLaptop } from "react-icons/fa";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { isIOS, isMobile } from "react-device-detect";
 
 import logoDprkp from "../../public/images/logo-dprkp-back-putih.png";
-// import logoMitrum from "../../public/images/logo/mitrum.png";
-// import logoPsu from "../../public/images/logo/psu.png";
 import logoSidakon from "../../public/images/logo/sidakon-small.png";
 import logoSirukim from "../../public/images/logo/sirukim.png";
 
 const features = [
   {
-      icon: <Image
-      src={logoDprkp}
-      alt="Logo Rusunawa"
-      width={100}
-      height={100}
-    />,
-      title: "Rumah Susun Sederhana Sewa (Rusunawa)",
-      description: "Rusunawa",
-      linkText: "Selengkapnya",
-      linkHref: "#",
-      bgColor: "bg-gray-100",
+    icon: (
+      <Image src={logoDprkp} alt="Logo Rusunawa" width={100} height={100} />
+    ),
+    title: "Rumah Susun Sederhana Sewa (Rusunawa)",
+    id: "rusunawa",
+    description: "Rusunawa",
+    linkHref: "#",
+    bgColor: "bg-gray-100",
   },
   {
     icon: <FaHome className="text-7xl text-black" />,
     title: "Hunian Terjangkau Milik",
+    id: "htm",
     description: "Hunian Terjangkau Milik",
-    linkText: "Selengkapnya",
     linkHref: "#",
     bgColor: "bg-gray-100",
   },
@@ -38,7 +34,7 @@ const features = [
     icon: <FaHome className="text-7xl text-black" />,
     title: "Peningkatan Kualitas Perumahan Kumuh",
     description: "",
-    linkText: "Selengkapnya",
+    id: "capcip",
     linkHref: "https://dprkp.jakarta.go.id/penataan_kumuh/",
     bgColor: "bg-gray-100",
   },
@@ -46,7 +42,7 @@ const features = [
     icon: <FaHome className="text-7xl text-black" />,
     title: "Konsolidasi Tanah Vertikal",
     description: "",
-    linkText: "Selengkapnya",
+    id: "ktv",
     linkHref: "#",
     bgColor: "bg-gray-100",
   },
@@ -61,37 +57,54 @@ const features = [
     ),
     title: "Perbaikan Rumah",
     description: "PERBAIKAN RUMAH",
-    linkText: "Selengkapnya",
+    id: "perbaikan",
     linkHref: "https://dprkp.jakarta.go.id/perbaikanrumah/",
     bgColor: "bg-gray-100",
   },
   {
     icon: <Image src={logoSirukim} alt="Logo Sirukim" width={80} height={80} />,
     title: "SIRUKIM",
+    id: "sirukim",
     description: "SIRUKIM",
-    linkText: "Selengkapnya",
     linkHref: "#",
     bgColor: "bg-gray-100",
   },
   {
     icon: <Image src={logoSidakon} alt="Logo Sirukim" width={80} height={80} />,
     title: "SIDAKON",
+    id: "sidakon",
     description: "SIDAKON",
-    linkText: "Selengkapnya",
     linkHref: "#",
     bgColor: "bg-gray-100",
   },
   {
     icon: <FaHome className="text-7xl text-black" />,
     title: "Spasial Perumahan",
+    id: "spasial",
     description: "Spasial Perumahan",
-    linkText: "Selengkapnya",
     linkHref: "#",
     bgColor: "bg-gray-100",
-  }
+  },
 ];
 
 export default function ThumbnailGrid() {
+  const openApps = (type) => {
+    if (type) {
+      if (isIOS) {
+        window.open(
+          "http://apps.apple.com/id/app/sirukim/id1643825692",
+          "_blank"
+        );
+      } else {
+        window.open(
+          "https://play.google.com/store/apps/details?id=com.dprkp.rusun",
+          "_blank"
+        );
+      }
+    } else {
+      window.open("https://sirukim.jakarta.go.id/sirukim-web/", "_blank");
+    }
+  };
 
   const settings = {
     dots: true,
@@ -141,12 +154,19 @@ export default function ThumbnailGrid() {
         <h2 className="text-center text-2xl font-semibold mb-6 text-black font-[inherit]">
           Program Unggulan
         </h2>
-        <div className="px-4">
+        <div className="px-4 md:h-[230px] sm:h-[230px]">
           <Slider {...settings}>
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="font-[inherit] p-6 border rounded-lg shadow-md flex flex-col items-start mx-2 md:h-[230px] sm:h-[230px] bg-white text-center"
+                onClick={() => {
+                  if (feature.id === "sirukim") {
+                    openApps(isMobile);
+                  } else {
+                    window.open(feature.linkHref)
+                  }
+                }}
+                className="h-[220px] font-[inherit] p-6 border rounded-lg shadow-md flex flex-col items-start mx-2 bg-white text-center cursor-pointer"
               >
                 <div className="w-full justify-items-center">
                   <div
@@ -159,13 +179,6 @@ export default function ThumbnailGrid() {
                 <h3 className="mt-4 text-lg font-bold text-black">
                   {feature.title}
                 </h3>
-                {/* <p className="text-sm text-black mt-2">{feature.description}</p> */}
-                {/* <a
-                  href={feature.linkHref}
-                  className="mt-3 text-[#376F04] font-semibold text-sm"
-                >
-                  {feature.linkText}
-                </a> */}
               </div>
             ))}
           </Slider>
