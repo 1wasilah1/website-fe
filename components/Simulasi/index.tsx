@@ -10,7 +10,6 @@ import {
   SelectItem,
   SelectValue,
 } from "@/components/ui/select";
-import { isMobile } from "react-device-detect";
 
 export default function Home() {
   const [tower, setTower] = useState("");
@@ -80,7 +79,6 @@ export default function Home() {
 
   return (
     <div className="bg-[#104c61] py-10 px-4 font-[inherit]">
-      <div>{/* <h1>Device Type: {isMobile ? 'Mobile' : 'Desktop'}</h1> */}</div>
       <h1 className="text-3xl font-bold text-center mb-2 text-[#f98025]">
         Simulasi Hunian Terjangkau Milik
       </h1>
